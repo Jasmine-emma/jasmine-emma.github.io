@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Love Shinchan</title>
+    <link rel="stylesheet" href="love shinchan.css">
+    <style>
+        body{
+            font-family:'Comic Sans MS', cursive, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background: linear-gradient(135deg, #FFE5E5 0%, #FFD4D4 100%);
+        }
+
+        .main-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header{
+            text-align: center;
+            padding: 20px;
+            background: linear-gradient(45deg,#FF9999, #FFB5B5);
+            border-radius: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            animation: bounce 2s infinite;
+       }
+
+       h1 {
+           color: #FFFFFF;
+           text-shadow: 3px 3px 6px rgba(255, 75, 75, 0.3);
+           font-size: 3.5em;     
+           font-weight: bold;    
+           margin-bottom: 30px;
+       }
+
+       .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            padding: 20px;
+        }
+        .gallery img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 10px;
+            transition: transform 0.3s ease;
+        }
+        .gallery img:hover {
+            transform: scale(1.05);
+        }
+        .caption {
+            text-align: center;
+            margin-top: 10px;
+            color: #666;
+            font-style: italic;
+        } 
+      
+       .table-container {
+           flex: 1;
+       }
+        
+       table {
+           width: 100%;
+           border-collapse: collapse;
+           background: white;
+           border-radius: 8px;
+           box-shadow: 0 4px 8px rgba(0,0,0,0.1)
+         }
+         
+         th, td {
+             padding: 6px;
+             text-align: left;
+             border: 2px solid #FFB5B5;
+             font-size: 12px;
+         }
+
+         th {
+             background: #FF9999;
+             color: white;
+             border-color: #FF7777;
+         }
+    
+         tr:hover {
+             background: #FFF0F0;
+         }
+
+         @keyframes bounce {
+             0%, 100% { transform: translateY(0); }
+             50% { transform: translateY(-5px); }
+        }
+      
+        .warning {
+            font-style: italic;
+            color: #FF4B4B; 
+            text-align: center;
+            background-color: #FF9999; 
+        }
+       
+        hr {
+            border: none;
+            height: 2px;
+            background-color: #FF9999;
+            margin: 30px 0;
+            background-image: linear-gradient(to right, transparent, #FFB5B5, transparent);
+        }
+
+        .intro-text {
+            text-align: center;
+            line-height: 1.6;
+            margin: 20px 0;
+            color: #FF4B4B; 
+            font-family: 'Comic Sans MS', Arial, sans-serif; 
+        }
+
+        .philosophical-list {
+            background-color: white;
+            padding: 30px 40px;
+            border-radius: 20px;
+            box-shadow: 0 4px 8px rgba(255, 107, 107, 0.2);
+            margin: 30px auto;
+            max-width: 600px;
+            border: 2px solid #FFB5B5;
+        }
+
+        .philosophical-list h2 {
+            color: #FFB5B5;
+            margin-bottom: 15px;
+            font-size: 2em;
+            text-align: center;
+            font-weight: bold;
+            text-shadow: 1px 1px 2px rgba(255, 181, 181, 0.3);
+        }
+
+        .philosophical-list ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .philosophical-list li {
+            margin: 15px 0;
+            padding: 15px 20px;
+            background-color: #FFB5B5;
+            border-radius: 10px;
+            color: #FFF;
+            font-size: 1.1em;
+            position: relative;
+            padding-left: 40px;
+            transition: transform 0.3s ease;
+            box-shadow: 0 2px 4px rgba(255, 181, 181, 0.3);
+        }
+
+        .philosophical-list:before {
+            position: absolute;
+            left: 15px;
+            top: 50%
+            transform: translateY(-50%);
+            font-size: 1.2em;
+        }
+
+        .quotes-section {
+            margin: 30px auto;
+            max-width: 1200px;  
+            padding: 20px;
+        }
+        .quotes-title {
+            color: #FF4B4B;
+            text-align: center;
+            font-size: 2.5em;
+            margin-bottom: 30px;
+            text-shadow: 2px 2px 4px rgba(255, 75, 75, 0.2);
+        }
+
+        .quotes-container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
+            padding: 10px;
+        }
+
+        .quote-card {
+            background: white;
+            padding: 15px;
+            border-radius: 15px;
+            box-shadow: 0 4px 8px rgba(255, 107, 107, 0.2);
+            transition: all 0.3s ease;
+            border: 2px solid #FFB5B5;
+            position: relative;
+            overflow: hidden;
+            width: 100%;
+        }
+
+        .quote-card:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 6px 12px rgba(255, 107, 107, 0.3);
+            background-color: #FFF5F5;
+        }
+  
+        .quote-image {
+            width: 100%;
+            height: 130px;
+            margin-bottom: 10px;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        .quote-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+
+        .quote-text {
+            color: #FF6B6B;
+            font-size: 0.95em;
+            margin-bottom: 8px;
+            line-height: 1.4;
+        }
+
+        .quote-context {
+            color: #FF9999;
+            font-style: italic;
+            font-size: 0.85em;
+            margin-top: 8px;
+            text-align: right;
+        }
+        .manga-section {
+            margin: 40px auto;
+            max-width: 1200px;
+            padding: 20px;
+        }
+
+        .manga-title {
+            color: #FF4B4B;
+            text-align: center;
+            font-size: 2.5em;
+            margin-bottom: 30px;
+            text-shadow: 2px 2px 4px rgba(255, 75, 75, 0.2);
+        }
+
+        .manga-container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr); /* 三列布局 */
+            gap: 20px;
+            padding: 10px;
+        }
+
+        .manga-card {
+            background: white;
+            padding: 10px;
+            border-radius: 15px;
+            box-shadow: 0 4px 8px rgba(255, 107, 107, 0.2);
+            transition: all 0.3s ease;
+            border: 2px solid #FFB5B5;
+            overflow: hidden;
+        }
+
+        .manga-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 12px rgba(255, 107, 107, 0.3);
+        }
+
+        .manga-card img {
+            width: 100%;
+            height: 500px; /* 竖长图片的高度 */
+            object-fit: cover;
+            border-radius: 8px;
+            transition: transform 0.3s ease;
+        }
+
+        .manga-card:hover img {
+            transform: scale(1.02);
+        }
+
+        .manga-caption {
+            text-align: center;
+            color: #FF6B6B;
+            font-size: 1.1em;
+            margin-top: 10px;
+            font-style: italic;
+        }
+
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .official-link-section {
+            margin: 40px auto;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .link-container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 30px;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 4px 15px rgba(255, 107, 107, 0.2);
+            border: 2px solid #FFB5B5;
+        }
+
+        .link-container h2 {
+            color: #FF4B4B;
+            font-size: 2em;
+            margin-bottom: 15px;
+        }
+
+        .link-container p {
+            color: #FF6B6B;
+            font-size: 1.1em;
+            margin-bottom: 25px;
+        }
+
+        .official-link {
+            display: inline-block;
+            padding: 15px 30px;
+            background: linear-gradient(45deg, #FF4B4B, #FF6B6B);
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-size: 1.2em;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(255, 75, 75, 0.3);
+        }
+
+        .official-link:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(255, 75, 75, 0.4);
+            background: linear-gradient(45deg, #FF6B6B, #FF4B4B);
+        }
+
+        .link-text {
+            margin-right: 10px;
+        }
+
+        .link-icon {
+            display: inline-block;
+            transition: transform 0.3s ease;
+        }
+
+        .official-link:hover .link-icon {
+            transform: translateX(5px);
+        }
+
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-5px); }
+        }
+
+        .link-container {
+            animation: bounce 3s infinite ease-in-out;
+        }
+        
+     </style>
+</head>
+<body>
+    <div class="main-content">
+        <header>
+            <h1>Welcome to Shinchan world!</h1>
+            <p class="Warning">Warning: Extreme laughter ahead!</p>
+        </header>
+
+        <div class="intro-text">
+            <p>Welcome to the wonderful world of <b>Crayon Shin-chan</b>! 
+            <br>Join us on an adventure with Japan's <i>favorite</i> five-year-old troublemaker!</p>
+
+            <p><b>Shin-chan is known for:</b><br>
+            His famous "<i>Action Beam</i>" dance<br>
+            Making <i>funny faces</i><br>
+            Getting into <b>mischief</b><br>
+            And bringing <b>joy</b> to everyone around him!</p>
+        </div>
+        <hr>
+
+        <h2>Photo Gallery</h2>
+    <div class="images-container">
+        <div class="gallery">
+            <div>
+                <img src="images/shinchan dance.jpg" alt="Shin-chan dancing">
+                <div class="caption">Shin-chan's Famous Dance</div>
+            </div>
+            <div>
+                <img src="images/shinchan family.jpg" alt="Shin-chan with family">
+                <div class="caption">Family Photo</div>
+            </div>
+            <div>
+                <img src="images/The Kasukabe Defense Group.jpg" alt="The Kasukabe Defense Group">
+                <div class="caption">The Kasukabe Defense Group</div>
+            </div>
+        </div>
+    </div>
+        <hr>
+
+        <div class="table-container">
+            <table>
+                <tr>
+                    <th>Character</th>
+                    <th>Description</th>
+            </tr>
+            <tr>
+                <td>Shinnosuke Nohara</td>
+                <td>The main character, a five-year-old boy who loves Chocobi and Action Mask.</td>
+            </tr>
+            <tr>
+                    <td>Misae Nohara</td>
+                    <td>Shin-chan's mother, a strong-willed homemaker who loves bargain hunting.</td>
+                </tr>
+                <tr>
+                    <td>Hiroshi Nohara</td>
+                    <td>Shin-chan's father, a hardworking salaryman who enjoys watching TV and drinking beer.</td>
+                </tr>
+                <tr>
+                    <td>Himawari Nohara</td>
+                    <td>Shin-chan's baby sister, who loves sunflowers and following her big brother.</td>
+                </tr>
+             </table>
+            </div>
+       
+        <hr>
+        <div class="philosophical-list">
+            <h2>Crayon Shin-chan's philosophical quotes</h2>
+            <ul>      
+                <li>If you think crying solves everything, you are completely wrong. Don't cry for small matters. Life is more difficult than you imagine.</li>
+                <li>Happiness is like peeing your pants, everyone can see it but only you can feel its warmth.</li>
+                <li>Life is for those who are quick with their hands and feet. Just looking stupidly will get you nothing!</li>
+                <li>If you can live an ordinary life, of course it's something to be congratulated.</li>
+                <li>Life has peaks and valleys, and it will get better afterwards.</li>
+                <li>Don't push yourself too hard. Work hard within your ability.</li>
+                <li>Sometimes you have to lie to find the truth.</li>
+                <li>Even the best things come to an end.</li>
+                <li>Don't be angry. It makes you old.</li>
+            </ul>
+        </div>
+       <hr>
+    <section class="quotes-section">
+        <h2 class="quotes-title">Shin-chan's Epic One-Liners</h2>
+        <div class="quotes-container">
+            <div class="quote-card">
+                <div class="quote-image">
+                    <img src="images/man.jpg" alt="Shin-chan making funny faces">
+                </div>
+                <p class="quote-text">"Yes, no man is reliable"</p>
+            </div>
+
+            <div class="quote-card">
+                <div class="quote-image">
+                    <img src="images/loveme.jpg" alt="Shin-chan dancing">
+                </div>
+                <p class="quote-text">"It doesn't matter if you fall in love with me"</p>
+            </div>
+
+            <div class="quote-card">
+                <div class="quote-image">
+                    <img src="images/three.jpg" alt="Shin-chan and dad watching TV">
+                </div>
+                <p class="quote-text">"I examine myself three times a day, I am not wrong"</p>
+            </div>
+    </section>
+    <hr>
+    <section class="manga-section">
+        <h2 class="manga-title">Shin-chan's Funny Moments</h2>
+        <div class="manga-container">
+        <div class="manga-card">
+            <img src="images/漫画1.jpg" alt="Shin-chan manga 1">
+            <div class="manga-caption">Action Beam Dance</div>
+        </div>
+        <div class="manga-card">
+            <img src="images/漫画2.jpg" alt="Shin-chan manga 2">
+            <div class="manga-caption">Mom's Happiness Punch</div>
+        </div>
+        <div class="manga-card">
+            <img src="images/漫画3.jpg" alt="Shin-chan manga 3">
+            <div class="manga-caption">Shiro's Adventure</div>
+        </div>
+    </div>
+    </section>
+    <hr>
+    <section class="official-link-section">
+        <div class="link-container">
+        <h2>Want More Shin-chan?</h2>
+        <p>Visit the official website for more adventures!</p>
+        <a href="https://www.shinchan-app.jp" target="_blank" class="official-link">
+            <span class="link-text">Visit Official Shin-chan Website</span>
+            <span class="link-icon">→</span>
+        </a>
+    </div>
+</section>
+    </div>
+</body>
+</html>
